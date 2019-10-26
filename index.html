@@ -1,0 +1,81 @@
+﻿<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>送给我的小妖精</title>
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<style type="text/css">
+		@font-face {
+			font-family: digit;
+			src: url('digital-7_mono.ttf') format("truetype");
+		}
+	</style>
+	<link href="css/default.css" type="text/css" rel="stylesheet">
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/garden.js"></script>
+    <script type="text/javascript" src="js/functions.js"></script>
+</head>
+
+<body>
+	<div id="mainDiv">
+		<div id="content">
+			<div id="code">
+				<br />
+                <div class="keyword">&nbsp;&nbsp;&nbsp;&nbsp;小乖乖，我们已经相识了马上五年了，在高一下学期被你选中了，然后就在一起了，好像是这样的诶。高中三年，我一直都在你身边，很多矛盾也都能在苗头的时候就解决，可是到了大学，尤其是大二，我和你的矛盾越积越多，得不到解决，我又老是懒，不想去做出改变，而且老是做事情不合你心意，让你觉得我们两个世界观，价值观，啥方面都不一样。</div><br /><br  /><br />
+				<div class="keyword">&nbsp;&nbsp;&nbsp;&nbsp;但是我觉得这都不是问题，我不想继续懒下去了，想要主动一下，想要让你更多的出现在我的世界里面一点，想要和你一起学习，一起生活，一起吃饭，一起洗碗，想要一直陪在你身边。今天是你的生日，祝你生日快乐鸭吖丫
+</div>
+				
+				
+			</div>
+			<div id="loveHeart">
+				<canvas id="garden"></canvas>
+				<div id="words">
+					<div id="messages">
+						小乖乖，我们已经认识了
+						<div id="elapseClock"></div>
+					</div>
+					<div id="loveu">
+						&nbsp;&nbsp;&nbsp;&nbsp;生日快乐鸭！<br/>
+						<div class="signature">爱你的谭柯龙</div>
+					</div>
+				</div>
+			</div>
+		</div>
+<!--        <div id="copyright">
+			 <a href='http://www.miibeian.gov.cn' target='_blank'>粤ICP备16108165号-1</a> Copyright © 2016  熊炼 2016-2019
+		</div>      !-->
+	</div>
+	<script type="text/javascript">
+		var offsetX = $("#loveHeart").width() / 2;
+		var offsetY = $("#loveHeart").height() / 2 - 55;
+		var together = new Date();
+		together.setFullYear(2017,6, 11);
+		together.setHours(22);
+		together.setMinutes(0);
+		together.setSeconds(0);
+		together.setMilliseconds(0);
+		
+		if (!document.createElement('canvas').getContext) {
+			var msg = document.createElement("div");
+			msg.id = "errorMsg";
+			msg.innerHTML = "Your browser doesn't support HTML5!<br/>Recommend use Chrome 14+/IE 9+/Firefox 7+/Safari 4+"; 
+			document.body.appendChild(msg);
+			$("#code").css("display", "none")
+			$("#copyright").css("position", "absolute");
+			$("#copyright").css("bottom", "10px");
+		    document.execCommand("stop");
+		} else {
+			setTimeout(function () {
+				startHeartAnimation();
+			}, 5000);
+
+			timeElapse(together);
+			setInterval(function () {
+				timeElapse(together);
+			}, 500);
+
+			adjustCodePosition();
+			$("#code").typewriter();
+		}
+	</script>
+</body>
+</html>
